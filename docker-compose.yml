@@ -1,0 +1,53 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: lifedrop-mysql
+    environment:
+      MYSQL_DATABASE: blood_bank_db
+      MYSQL_USER: lifedrop
+      MYSQL_PASSWORD: lifedrop_demo_password
+      MYSQL_ROOT_PASSWORD: lifedrop_root_demo_password
+    volumes:
+      - lifedrop_mysql_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      - ./database/demo_seed.sql:/docker-entrypoint-initdb.d/02-demo-seed.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "lifedrop", "-plifedrop_demo_password"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: lifedrop-backend
+    environment:
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      DB_USER: lifedrop
+      DB_PASSWORD: lifedrop_demo_password
+      DB_NAME: blood_bank_db
+      JWT_SECRET: ${JWT_SECRET:-lifedrop-local-demo-secret-change-before-sharing}
+    ports:
+      - "8000:8000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: lifedrop-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  lifedrop_mysql_data:
+
