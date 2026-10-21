@@ -20,6 +20,7 @@ Tech Stack
 Project Structure
 
 Major-Project/
+'''Text
 ├── backend/
 │   ├── app/
 │   │   ├── routes/
@@ -61,7 +62,7 @@ Major-Project/
 │   └── vite.config.js
 ├── .gitignore
 └── README.md
-
+'''
 Getting Started
 
 1. Clone the Repository
