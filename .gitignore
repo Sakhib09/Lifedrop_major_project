@@ -1,17 +1,18 @@
-
 # Python
 __pycache__/
 *.py[cod]
+venv/
 backend/venv/
 
 # Environment variables and secrets
 .env
-backend/.env
+.env.*
+!.env.example
 
 # Node.js
 frontend/node_modules/
 frontend/dist/
 
-# Generated ML files
+# Generated ML data
 backend/ml/synthetic_donor_data.csv
 backend/ml/random_forest_model.joblib
