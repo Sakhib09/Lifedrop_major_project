@@ -18,10 +18,9 @@ Tech Stack
 - Maps: React Leaflet, OpenStreetMap
 
 Project Structure
+```
 
 Major-Project/
-
-```
 ├── backend/
 │   ├── app/
 │   │   ├── routes/
