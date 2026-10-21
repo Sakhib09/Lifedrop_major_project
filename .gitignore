@@ -1,0 +1,17 @@
+
+# Python
+__pycache__/
+*.py[cod]
+backend/venv/
+
+# Environment variables and secrets
+.env
+backend/.env
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+
+# Generated ML files
+backend/ml/synthetic_donor_data.csv
+backend/ml/random_forest_model.joblib
