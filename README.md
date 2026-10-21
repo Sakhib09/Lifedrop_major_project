@@ -20,7 +20,11 @@ Tech Stack
 Project Structure
 
 Major-Project/
+<<<<<<< HEAD
 '''Text
+=======
+'''
+>>>>>>> e1ad408 (Update README)
 ├── backend/
 │   ├── app/
 │   │   ├── routes/
