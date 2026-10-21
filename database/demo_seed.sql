@@ -1,68 +1,212 @@
--- LifeDrop synthetic demo data only.
--- All names, emails and phone numbers below are fictional.
-
-INSERT IGNORE INTO users
-(user_id, full_name, email, password_hash, phone, role)
-VALUES
+-- LifeDrop synthetic demo data. Names and phone numbers are fictional.
+INSERT IGNORE INTO users (user_id, full_name, email, password_hash, phone, role) VALUES
 (1, 'LifeDrop Demo Requester', 'demo.requester@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9000000001', 'user'),
-(2, 'Demo Placeholder 2', 'placeholder2@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9000000002', 'user'),
-(3, 'Demo Placeholder 3', 'placeholder3@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9000000003', 'user'),
-(4, 'Demo Placeholder 4', 'placeholder4@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9000000004', 'user'),
-(5, 'Demo Placeholder 5', 'placeholder5@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9000000005', 'user');
+(6, 'Nisha Desai', 'demo.donor.6@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9002586940', 'user'),
+(7, 'Sahil Shah', 'demo.donor.7@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9794588062', 'user'),
+(8, 'Ibrahim Sharma', 'demo.donor.8@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9299327753', 'user'),
+(9, 'Harsha Hegde', 'demo.donor.9@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9830189214', 'user'),
+(10, 'Arjun Gill', 'demo.donor.10@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9590659108', 'user'),
+(11, 'Sana Syed', 'demo.donor.11@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9046035187', 'user'),
+(12, 'Kavya Rao', 'demo.donor.12@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9784728747', 'user'),
+(13, 'Ira Kulkarni', 'demo.donor.13@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9973462244', 'user'),
+(14, 'Aditya Jain', 'demo.donor.14@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9555181192', 'user'),
+(15, 'Vikram Joshi', 'demo.donor.15@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9847690574', 'user'),
+(16, 'Harsha Shetty', 'demo.donor.16@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9724498510', 'user'),
+(17, 'Ayaan Desai', 'demo.donor.17@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9159031999', 'user'),
+(18, 'Pooja Yadav', 'demo.donor.18@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9652945478', 'user'),
+(19, 'Tanvi Iyer', 'demo.donor.19@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9936299650', 'user'),
+(20, 'Priya Hegde', 'demo.donor.20@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9758935849', 'user'),
+(21, 'Sana Fernandes', 'demo.donor.21@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9872977924', 'user'),
+(22, 'Ayaan Bhat', 'demo.donor.22@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9590613331', 'user'),
+(23, 'Maya Fernandes', 'demo.donor.23@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9756663706', 'user'),
+(24, 'Anjali Iyer', 'demo.donor.24@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9031601020', 'user'),
+(25, 'Tanvi Poojary', 'demo.donor.25@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9957570880', 'user'),
+(26, 'Neha Gowda', 'demo.donor.26@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9230451645', 'user'),
+(27, 'Sana Khan', 'demo.donor.27@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9784364132', 'user'),
+(28, 'Sameer Ahmed', 'demo.donor.28@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9673105961', 'user'),
+(29, 'Pooja Iyer', 'demo.donor.29@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9500408147', 'user'),
+(30, 'Ira Khan', 'demo.donor.30@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9924479443', 'user'),
+(31, 'Ananya Ahmed', 'demo.donor.31@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9895677652', 'user'),
+(32, 'Dev Poojary', 'demo.donor.32@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9308496663', 'user'),
+(33, 'Ayaan Shah', 'demo.donor.33@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9091350441', 'user'),
+(34, 'Varun Kulkarni', 'demo.donor.34@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9497966071', 'user'),
+(35, 'Priya Pai', 'demo.donor.35@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9952962234', 'user'),
+(36, 'Manav Joshi', 'demo.donor.36@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9617161759', 'user'),
+(37, 'Varun Syed', 'demo.donor.37@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9871040264', 'user'),
+(38, 'Ira Gowda', 'demo.donor.38@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9859733176', 'user'),
+(39, 'Farhan Naik', 'demo.donor.39@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9118469777', 'user'),
+(40, 'Fatima Fernandes', 'demo.donor.40@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9104465148', 'user'),
+(41, 'Pooja Kulkarni', 'demo.donor.41@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9012844244', 'user'),
+(42, 'Kavya Hegde', 'demo.donor.42@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9609783257', 'user'),
+(43, 'Ayaan Kapoor', 'demo.donor.43@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9614501135', 'user'),
+(44, 'Manav Sharma', 'demo.donor.44@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9618290107', 'user'),
+(45, 'Farhan Fernandes', 'demo.donor.45@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9354666449', 'user'),
+(46, 'Shreya Hegde', 'demo.donor.46@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9319421475', 'user'),
+(47, 'Sanjay Kapoor', 'demo.donor.47@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9876155781', 'user'),
+(48, 'Ayaan Poojary', 'demo.donor.48@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9672848341', 'user'),
+(49, 'Arjun Syed', 'demo.donor.49@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9755938155', 'user'),
+(50, 'Sana Desai', 'demo.donor.50@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9681712783', 'user'),
+(51, 'Krishna Reddy', 'demo.donor.51@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9354839515', 'user'),
+(52, 'Meera Desai', 'demo.donor.52@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9887898383', 'user'),
+(53, 'Ibrahim Kapoor', 'demo.donor.53@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9473477440', 'user'),
+(54, 'Sahil Mishra', 'demo.donor.54@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9331509634', 'user'),
+(55, 'Sonia Kapoor', 'demo.donor.55@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9553139646', 'user'),
+(56, 'Pallavi Rao', 'demo.donor.56@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9492503086', 'user'),
+(57, 'Sahil Iyer', 'demo.donor.57@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9819076005', 'user'),
+(58, 'Divya Jain', 'demo.donor.58@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9823206763', 'user'),
+(59, 'Pooja Pillai', 'demo.donor.59@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9920157051', 'user'),
+(60, 'Krishna Khan', 'demo.donor.60@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9525264020', 'user'),
+(61, 'Arjun Poojary', 'demo.donor.61@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9715724874', 'user'),
+(62, 'Anjali Rao', 'demo.donor.62@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9996512582', 'user'),
+(63, 'Pallavi Mishra', 'demo.donor.63@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9004422572', 'user'),
+(64, 'Akash Syed', 'demo.donor.64@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9894365141', 'user'),
+(65, 'Manav Shah', 'demo.donor.65@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9009377940', 'user'),
+(66, 'Neha Jain', 'demo.donor.66@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9368231853', 'user'),
+(67, 'Ibrahim Kamath', 'demo.donor.67@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9262302235', 'user'),
+(68, 'Vishal Ahmed', 'demo.donor.68@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9172527271', 'user'),
+(69, 'Ira Gill', 'demo.donor.69@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9304368216', 'user'),
+(70, 'Zoya Khan', 'demo.donor.70@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9313610428', 'user'),
+(71, 'Kiran Chauhan', 'demo.donor.71@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9422558426', 'user'),
+(72, 'Riya Bose', 'demo.donor.72@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9061253779', 'user'),
+(73, 'Ibrahim Iyer', 'demo.donor.73@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9267778017', 'user'),
+(74, 'Deepak Das', 'demo.donor.74@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9073347430', 'user'),
+(75, 'Rahul Nair', 'demo.donor.75@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9444293623', 'user'),
+(76, 'Ananya Shah', 'demo.donor.76@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9905206930', 'user'),
+(77, 'Sameer Joshi', 'demo.donor.77@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9351438683', 'user'),
+(78, 'Aditya Shah', 'demo.donor.78@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9924115782', 'user'),
+(79, 'Fatima Rathore', 'demo.donor.79@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9103413993', 'user'),
+(80, 'Aditya Hegde', 'demo.donor.80@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9820639161', 'user'),
+(81, 'Anjali Kamath', 'demo.donor.81@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9833736006', 'user'),
+(82, 'Pallavi Khan', 'demo.donor.82@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9999255441', 'user'),
+(83, 'Ananya Fernandes', 'demo.donor.83@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9322161424', 'user'),
+(84, 'Akash Kumar', 'demo.donor.84@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9211578245', 'user'),
+(85, 'Farhan Thomas', 'demo.donor.85@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9284777735', 'user'),
+(86, 'Tanvi Nair', 'demo.donor.86@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9051050745', 'user'),
+(87, 'Dev Rathore', 'demo.donor.87@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9296335253', 'user'),
+(88, 'Pooja Menon', 'demo.donor.88@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9996587641', 'user'),
+(89, 'Kiran Kapoor', 'demo.donor.89@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9500662445', 'user'),
+(90, 'Shreya Mishra', 'demo.donor.90@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9038565713', 'user'),
+(91, 'Rahul Rathore', 'demo.donor.91@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9359764475', 'user'),
+(92, 'Kiran Gowda', 'demo.donor.92@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9767818398', 'user'),
+(93, 'Divya Acharya', 'demo.donor.93@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9089711152', 'user'),
+(94, 'Shreya Rao', 'demo.donor.94@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9552228615', 'user'),
+(95, 'Farhan Gowda', 'demo.donor.95@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9023244241', 'user'),
+(96, 'Rahul Khan', 'demo.donor.96@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9051887526', 'user'),
+(97, 'Rohan Chauhan', 'demo.donor.97@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9859915202', 'user'),
+(98, 'Riya Sharma', 'demo.donor.98@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9856070536', 'user'),
+(99, 'Ayesha Nair', 'demo.donor.99@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9609214793', 'user'),
+(100, 'Zoya Acharya', 'demo.donor.100@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9404399059', 'user'),
+(101, 'Vishal Singh', 'demo.donor.101@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9651541752', 'user'),
+(102, 'Rehan Gill', 'demo.donor.102@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9788121552', 'user'),
+(103, 'Deepak Singh', 'demo.donor.103@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9491924960', 'user'),
+(104, 'Manav Naik', 'demo.donor.104@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9905371841', 'user'),
+(105, 'Rohan Pillai', 'demo.donor.105@example.com', 'DEMO_ACCOUNT_NOT_FOR_LOGIN', '9857541427', 'user');
 
-INSERT IGNORE INTO users
-(user_id, full_name, email, password_hash, phone, role)
-WITH RECURSIVE seq AS (
-    SELECT 6 AS n
-    UNION ALL
-    SELECT n + 1 FROM seq WHERE n < 105
-)
-SELECT
-    n,
-    CONCAT('Demo Donor ', LPAD(n - 5, 3, '0')),
-    CONCAT('demo.donor.', n, '@example.com'),
-    'DEMO_ACCOUNT_NOT_FOR_LOGIN',
-    CONCAT('9000', LPAD(n, 6, '0')),
-    'user'
-FROM seq;
+INSERT IGNORE INTO donor_profiles (user_id, blood_group, date_of_birth, city, state, is_available) VALUES
+(6, 'A+', DATE_SUB(CURDATE(), INTERVAL 20 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(7, 'A-', DATE_SUB(CURDATE(), INTERVAL 21 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(8, 'B+', DATE_SUB(CURDATE(), INTERVAL 22 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(9, 'B-', DATE_SUB(CURDATE(), INTERVAL 23 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(10, 'AB+', DATE_SUB(CURDATE(), INTERVAL 24 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(11, 'AB-', DATE_SUB(CURDATE(), INTERVAL 25 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(12, 'O+', DATE_SUB(CURDATE(), INTERVAL 26 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(13, 'O-', DATE_SUB(CURDATE(), INTERVAL 27 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(14, 'A+', DATE_SUB(CURDATE(), INTERVAL 28 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(15, 'A-', DATE_SUB(CURDATE(), INTERVAL 29 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(16, 'B+', DATE_SUB(CURDATE(), INTERVAL 30 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(17, 'B-', DATE_SUB(CURDATE(), INTERVAL 31 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(18, 'AB+', DATE_SUB(CURDATE(), INTERVAL 32 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(19, 'AB-', DATE_SUB(CURDATE(), INTERVAL 33 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(20, 'O+', DATE_SUB(CURDATE(), INTERVAL 34 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(21, 'O-', DATE_SUB(CURDATE(), INTERVAL 35 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(22, 'A+', DATE_SUB(CURDATE(), INTERVAL 36 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(23, 'A-', DATE_SUB(CURDATE(), INTERVAL 37 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(24, 'B+', DATE_SUB(CURDATE(), INTERVAL 38 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(25, 'B-', DATE_SUB(CURDATE(), INTERVAL 39 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(26, 'AB+', DATE_SUB(CURDATE(), INTERVAL 40 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(27, 'AB-', DATE_SUB(CURDATE(), INTERVAL 41 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(28, 'O+', DATE_SUB(CURDATE(), INTERVAL 42 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(29, 'O-', DATE_SUB(CURDATE(), INTERVAL 43 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(30, 'A+', DATE_SUB(CURDATE(), INTERVAL 44 YEAR), 'Udupi', 'Karnataka', TRUE),
+(31, 'A-', DATE_SUB(CURDATE(), INTERVAL 20 YEAR), 'Udupi', 'Karnataka', TRUE),
+(32, 'B+', DATE_SUB(CURDATE(), INTERVAL 21 YEAR), 'Udupi', 'Karnataka', TRUE),
+(33, 'B-', DATE_SUB(CURDATE(), INTERVAL 22 YEAR), 'Udupi', 'Karnataka', TRUE),
+(34, 'AB+', DATE_SUB(CURDATE(), INTERVAL 23 YEAR), 'Udupi', 'Karnataka', TRUE),
+(35, 'AB-', DATE_SUB(CURDATE(), INTERVAL 24 YEAR), 'Udupi', 'Karnataka', TRUE),
+(36, 'O+', DATE_SUB(CURDATE(), INTERVAL 25 YEAR), 'Udupi', 'Karnataka', TRUE),
+(37, 'O-', DATE_SUB(CURDATE(), INTERVAL 26 YEAR), 'Udupi', 'Karnataka', TRUE),
+(38, 'A+', DATE_SUB(CURDATE(), INTERVAL 27 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(39, 'A-', DATE_SUB(CURDATE(), INTERVAL 28 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(40, 'B+', DATE_SUB(CURDATE(), INTERVAL 29 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(41, 'B-', DATE_SUB(CURDATE(), INTERVAL 30 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(42, 'AB+', DATE_SUB(CURDATE(), INTERVAL 31 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(43, 'AB-', DATE_SUB(CURDATE(), INTERVAL 32 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(44, 'O+', DATE_SUB(CURDATE(), INTERVAL 33 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(45, 'O-', DATE_SUB(CURDATE(), INTERVAL 34 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(46, 'A+', DATE_SUB(CURDATE(), INTERVAL 35 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(47, 'A-', DATE_SUB(CURDATE(), INTERVAL 36 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(48, 'B+', DATE_SUB(CURDATE(), INTERVAL 37 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(49, 'B-', DATE_SUB(CURDATE(), INTERVAL 38 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(50, 'AB+', DATE_SUB(CURDATE(), INTERVAL 39 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(51, 'AB-', DATE_SUB(CURDATE(), INTERVAL 40 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(52, 'O+', DATE_SUB(CURDATE(), INTERVAL 41 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(53, 'O-', DATE_SUB(CURDATE(), INTERVAL 42 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(54, 'A+', DATE_SUB(CURDATE(), INTERVAL 43 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(55, 'A-', DATE_SUB(CURDATE(), INTERVAL 44 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(56, 'B+', DATE_SUB(CURDATE(), INTERVAL 20 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(57, 'B-', DATE_SUB(CURDATE(), INTERVAL 21 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(58, 'AB+', DATE_SUB(CURDATE(), INTERVAL 22 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(59, 'AB-', DATE_SUB(CURDATE(), INTERVAL 23 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(60, 'O+', DATE_SUB(CURDATE(), INTERVAL 24 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(61, 'O-', DATE_SUB(CURDATE(), INTERVAL 25 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(62, 'A+', DATE_SUB(CURDATE(), INTERVAL 26 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(63, 'A-', DATE_SUB(CURDATE(), INTERVAL 27 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(64, 'B+', DATE_SUB(CURDATE(), INTERVAL 28 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(65, 'B-', DATE_SUB(CURDATE(), INTERVAL 29 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(66, 'AB+', DATE_SUB(CURDATE(), INTERVAL 30 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(67, 'AB-', DATE_SUB(CURDATE(), INTERVAL 31 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(68, 'O+', DATE_SUB(CURDATE(), INTERVAL 32 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(69, 'O-', DATE_SUB(CURDATE(), INTERVAL 33 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(70, 'A+', DATE_SUB(CURDATE(), INTERVAL 34 YEAR), 'Udupi', 'Karnataka', TRUE),
+(71, 'A-', DATE_SUB(CURDATE(), INTERVAL 35 YEAR), 'Udupi', 'Karnataka', TRUE),
+(72, 'B+', DATE_SUB(CURDATE(), INTERVAL 36 YEAR), 'Udupi', 'Karnataka', TRUE),
+(73, 'B-', DATE_SUB(CURDATE(), INTERVAL 37 YEAR), 'Udupi', 'Karnataka', TRUE),
+(74, 'AB+', DATE_SUB(CURDATE(), INTERVAL 38 YEAR), 'Udupi', 'Karnataka', TRUE),
+(75, 'AB-', DATE_SUB(CURDATE(), INTERVAL 39 YEAR), 'Udupi', 'Karnataka', TRUE),
+(76, 'O+', DATE_SUB(CURDATE(), INTERVAL 40 YEAR), 'Udupi', 'Karnataka', TRUE),
+(77, 'O-', DATE_SUB(CURDATE(), INTERVAL 41 YEAR), 'Udupi', 'Karnataka', TRUE),
+(78, 'A+', DATE_SUB(CURDATE(), INTERVAL 42 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(79, 'A-', DATE_SUB(CURDATE(), INTERVAL 43 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(80, 'B+', DATE_SUB(CURDATE(), INTERVAL 44 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(81, 'B-', DATE_SUB(CURDATE(), INTERVAL 20 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(82, 'AB+', DATE_SUB(CURDATE(), INTERVAL 21 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(83, 'AB-', DATE_SUB(CURDATE(), INTERVAL 22 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(84, 'O+', DATE_SUB(CURDATE(), INTERVAL 23 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(85, 'O-', DATE_SUB(CURDATE(), INTERVAL 24 YEAR), 'Moodbidri', 'Karnataka', TRUE),
+(86, 'A+', DATE_SUB(CURDATE(), INTERVAL 25 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(87, 'A-', DATE_SUB(CURDATE(), INTERVAL 26 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(88, 'B+', DATE_SUB(CURDATE(), INTERVAL 27 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(89, 'B-', DATE_SUB(CURDATE(), INTERVAL 28 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(90, 'AB+', DATE_SUB(CURDATE(), INTERVAL 29 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(91, 'AB-', DATE_SUB(CURDATE(), INTERVAL 30 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(92, 'O+', DATE_SUB(CURDATE(), INTERVAL 31 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(93, 'O-', DATE_SUB(CURDATE(), INTERVAL 32 YEAR), 'Bengaluru', 'Karnataka', TRUE),
+(94, 'A+', DATE_SUB(CURDATE(), INTERVAL 33 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(95, 'A-', DATE_SUB(CURDATE(), INTERVAL 34 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(96, 'B+', DATE_SUB(CURDATE(), INTERVAL 35 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(97, 'B-', DATE_SUB(CURDATE(), INTERVAL 36 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(98, 'AB+', DATE_SUB(CURDATE(), INTERVAL 37 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(99, 'AB-', DATE_SUB(CURDATE(), INTERVAL 38 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(100, 'O+', DATE_SUB(CURDATE(), INTERVAL 39 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(101, 'O-', DATE_SUB(CURDATE(), INTERVAL 40 YEAR), 'Mangaluru', 'Karnataka', TRUE),
+(102, 'A+', DATE_SUB(CURDATE(), INTERVAL 41 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(103, 'A-', DATE_SUB(CURDATE(), INTERVAL 42 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(104, 'B+', DATE_SUB(CURDATE(), INTERVAL 43 YEAR), 'Mysuru', 'Karnataka', TRUE),
+(105, 'B-', DATE_SUB(CURDATE(), INTERVAL 44 YEAR), 'Mysuru', 'Karnataka', TRUE);
 
-INSERT IGNORE INTO donor_profiles
-(user_id, blood_group, date_of_birth, city, state, is_available)
-WITH RECURSIVE seq AS (
-    SELECT 6 AS n
-    UNION ALL
-    SELECT n + 1 FROM seq WHERE n < 105
-)
-SELECT
-    n,
-    CASE MOD(n - 6, 8)
-        WHEN 0 THEN 'A+'
-        WHEN 1 THEN 'A-'
-        WHEN 2 THEN 'B+'
-        WHEN 3 THEN 'B-'
-        WHEN 4 THEN 'AB+'
-        WHEN 5 THEN 'AB-'
-        WHEN 6 THEN 'O+'
-        ELSE 'O-'
-    END,
-    DATE_SUB(CURDATE(), INTERVAL (20 + MOD(n, 25)) YEAR),
-    CASE MOD(FLOOR((n - 6) / 8), 5)
-        WHEN 0 THEN 'Bengaluru'
-        WHEN 1 THEN 'Mangaluru'
-        WHEN 2 THEN 'Mysuru'
-        WHEN 3 THEN 'Udupi'
-        ELSE 'Moodbidri'
-    END,
-    'Karnataka',
-    TRUE
-FROM seq;
-
-INSERT IGNORE INTO blood_requests
-(request_id, requester_id, blood_group, units_required, hospital_name, city, state, urgency, status, required_by)
-VALUES
+INSERT IGNORE INTO blood_requests (request_id, requester_id, blood_group, units_required, hospital_name, city, state, urgency, status, required_by) VALUES
 (1, 1, 'O+', 2, 'Demo City Hospital', 'Mangaluru', 'Karnataka', 'urgent', 'open', DATE_ADD(CURDATE(), INTERVAL 2 DAY)),
 (2, 1, 'A+', 1, 'Demo Central Hospital', 'Bengaluru', 'Karnataka', 'normal', 'open', DATE_ADD(CURDATE(), INTERVAL 5 DAY)),
 (3, 1, 'B+', 2, 'Demo Community Hospital', 'Mysuru', 'Karnataka', 'emergency', 'open', DATE_ADD(CURDATE(), INTERVAL 1 DAY)),
 (4, 1, 'AB+', 1, 'Demo Coastal Hospital', 'Udupi', 'Karnataka', 'normal', 'open', DATE_ADD(CURDATE(), INTERVAL 4 DAY)),
-(5, 1, 'O-', 1, 'Demo North Hospital', 'Hubballi', 'Karnataka', 'urgent', 'open', DATE_ADD(CURDATE(), INTERVAL 2 DAY));
-
+(5, 1, 'O-', 1, 'Demo North Hospital', 'Moodbidri', 'Karnataka', 'urgent', 'open', DATE_ADD(CURDATE(), INTERVAL 2 DAY));
