@@ -36,22 +36,22 @@ WITH RECURSIVE seq AS (
 SELECT
     n,
     CASE MOD(n - 6, 8)
-        WHEN 0 THEN 'O+'
-        WHEN 1 THEN 'A+'
+        WHEN 0 THEN 'A+'
+        WHEN 1 THEN 'A-'
         WHEN 2 THEN 'B+'
-        WHEN 3 THEN 'AB+'
-        WHEN 4 THEN 'O-'
-        WHEN 5 THEN 'A-'
-        WHEN 6 THEN 'B-'
-        ELSE 'AB-'
+        WHEN 3 THEN 'B-'
+        WHEN 4 THEN 'AB+'
+        WHEN 5 THEN 'AB-'
+        WHEN 6 THEN 'O+'
+        ELSE 'O-'
     END,
     DATE_SUB(CURDATE(), INTERVAL (20 + MOD(n, 25)) YEAR),
-    CASE MOD(n, 5)
-        WHEN 0 THEN 'Mangaluru'
-        WHEN 1 THEN 'Bengaluru'
+    CASE MOD(FLOOR((n - 6) / 8), 5)
+        WHEN 0 THEN 'Bengaluru'
+        WHEN 1 THEN 'Mangaluru'
         WHEN 2 THEN 'Mysuru'
         WHEN 3 THEN 'Udupi'
-        ELSE 'Hubballi'
+        ELSE 'Moodbidri'
     END,
     'Karnataka',
     TRUE
@@ -65,3 +65,4 @@ VALUES
 (3, 1, 'B+', 2, 'Demo Community Hospital', 'Mysuru', 'Karnataka', 'emergency', 'open', DATE_ADD(CURDATE(), INTERVAL 1 DAY)),
 (4, 1, 'AB+', 1, 'Demo Coastal Hospital', 'Udupi', 'Karnataka', 'normal', 'open', DATE_ADD(CURDATE(), INTERVAL 4 DAY)),
 (5, 1, 'O-', 1, 'Demo North Hospital', 'Hubballi', 'Karnataka', 'urgent', 'open', DATE_ADD(CURDATE(), INTERVAL 2 DAY));
+
