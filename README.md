@@ -20,11 +20,9 @@ Tech Stack
 Project Structure
 
 Major-Project/
-<<<<<<< HEAD
-'''Text
-=======
-'''
->>>>>>> e1ad408 (Update README)
+
+```text
+>>>>>>> a3b5ab7 (Fix README formatting)
 ├── backend/
 │   ├── app/
 │   │   ├── routes/
@@ -66,7 +64,7 @@ Major-Project/
 │   └── vite.config.js
 ├── .gitignore
 └── README.md
-'''
+```
 Getting Started
 
 1. Clone the Repository
