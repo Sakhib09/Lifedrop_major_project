@@ -28,6 +28,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "https://lifedrop-frontend-8d1q.onrender.com"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -135,4 +136,4 @@ def predict(data: DonorData):
             "clinically validated and must not determine "
             "real donor eligibility."
         ),
-    }
+    } 
