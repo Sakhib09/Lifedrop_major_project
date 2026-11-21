@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  const API_BASE_URL = "https://YOUR-BACKEND-URL.onrender.com/api",
+  baseURL: "https://lifedrop-backend-njdn.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
